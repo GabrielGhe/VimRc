@@ -27,10 +27,8 @@ command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, '--ignore legacy_platforms'
 
 nnoremap <leader>] :NERDTreeFind<CR>
 nnoremap <leader>[ :NERDTreeToggle<CR>
-"nnoremap <leader><Left> <C-O>
-"nnoremap <leader><Right> <C-I>
 nnoremap <leader>\ :GFiles!<CR>
-nnoremap <leader><Enter> :Ag!<CR>
+nnoremap <leader><Space> :Ag!<CR>
 
 "Interacting with split screen in Vim
 "\←    Ctrl-w h        Shift focus to split on left of current
@@ -46,6 +44,14 @@ nnoremap <Leader><Up>    <C-w>k
 nnoremap <Leader>v <C-w>v
 nnoremap <Leader>h <C-w>s
 
+"Highlight Cursor number
+set cursorline
+set cursorlineopt=number
+
+highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#ffffff guifg=#d70000
+highlight StatusLineNC cterm=NONE ctermfg=Black ctermbg=DarkGray
+highlight StatusLineNC cterm=NONE ctermfg=DarkGray ctermbg=Black
+
 vmap <leader>y "*y
 vmap <leader>p <ESC>"*p
 imap <leader>p <ESC>"*p
@@ -54,4 +60,16 @@ set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 set nofixendofline
 set clipboard=unnamed
+
+let g:tmux_navigator_no_mappings = 1
+"noremap <silent> <Leader><Left> :<C-U>TmuxNavigateLeft<cr>
+"noremap <silent> <Leader><Down> :<C-U>TmuxNavigateDown<cr>
+"noremap <silent> <Leader><Up> :<C-U>TmuxNavigateUp<cr>
+"noremap <silent> <Leader><Right> :<C-U>TmuxNavigateRight<cr>
+noremap <silent> <Leader><Delete> :<C-U>TmuxNavigatePrevious<cr>
+```
+
+```
+# ls ~/.vim/bundle/
+ctrlp.vim  fzf.vim  nerdtree  supertab  vim-sensible  vim-sleuth  vim-tmux-navigator  vim-windowswap  YouCompleteMe
 ```
