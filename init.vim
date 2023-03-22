@@ -112,6 +112,7 @@ call plug#begin(s:dir_vim_config.'/plugged')
 Plug 'inkarkat/vim-ingo-library'
 Plug 'inkarkat/vim-mark'
 Plug 'kyazdani42/nvim-web-devicons'
+Plug 'wesQ3/vim-windowswap'
 
 " Allows editing the quickfix window.
 Plug 'jceb/vim-editqf'
