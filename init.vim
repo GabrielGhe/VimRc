@@ -25,8 +25,8 @@ set showcmd                     " Display incomplete commands.
 set noerrorbells                " No bells.
 
 nnoremap <Space> <Nop>
+nnoremap f <Nop>
 " Default Leader will be \
-" let mapleader = " "
 
 " Presentation ============================================================={{{1
 
