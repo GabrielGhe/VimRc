@@ -9,6 +9,7 @@
     ├── config
     │   ├── cmp.lua
     │   ├── leap.lua
+    │   ├── lspconfig.lua
     │   ├── lualine.lua
     │   ├── lualine-quiet.lua
     │   ├── telescope-file-browser.lua
