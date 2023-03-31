@@ -58,6 +58,36 @@ return require("packer").startup(function(use)
     requires = {{"kyazdani42/nvim-web-devicons"}, {"SmiteshP/nvim-navic"}},
     config = function() require("config.lualine") end
   }
+    
+  use {
+    "ggandor/leap.nvim",
+    config = function() require("config.leap") end
+  }
+
+  use {
+    "neovim/nvim-lspconfig",
+    requires = {{"williamboman/mason.nvim"}, {"williamboman/mason-lspconfig.nvim"}, {"hrsh7th/nvim-cmp"}},
+    config = function() require("config.lspconfig") end
+  }
+
+  use {
+    "hrsh7th/nvim-cmp",
+    requires = {
+      {"hrsh7th/cmp-nvim-lsp"},
+      {"hrsh7th/cmp-buffer"},
+      {"hrsh7th/cmp-path"},
+      {"hrsh7th/cmp-cmdline"},
+      -- `cmp-nvim-lsp` requires a snippet engine.
+      {"hrsh7th/cmp-vsnip"},
+      {"hrsh7th/vim-vsnip"}
+    },
+    config = function() require("config.cmp") end
+  }
+
+  use {
+    "hrsh7th/vim-vsnip",
+    config = function() require("config.vsnip") end
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
