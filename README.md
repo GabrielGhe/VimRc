@@ -7,13 +7,14 @@
 ├── init.vim
 └── lua
     ├── config
-    │   ├── hop.lua
+    │   ├── cmp.lua
     │   ├── leap.lua
     │   ├── lualine.lua
     │   ├── lualine-quiet.lua
     │   ├── telescope-file-browser.lua
     │   ├── telescope.lua
-    │   └── treesitter.lua
+    │   ├── treesitter.lua
+    │   └── vsnip.lua
     ├── plugins.lua
     └── quiet.lua
 ```
