@@ -29,6 +29,11 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.g
 safe VIM_INSTALL_PLUGINS=1 nvim -c PlugInstall -c :qa
 ```
 
+Install pylsp (python lsp server)
+```
+sudo python -m pip install pylsp
+```
+
 2. Run `:PackerSync` or `:PackerInstall` to install all the packer plugins.
 
 3. Install NerdFont into Iter2 to support lualine and Telescope
