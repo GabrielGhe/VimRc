@@ -1,6 +1,7 @@
 ## The Structure is
 
 ```
+~/.bashrc
 ~/.config/nvim/
 ├── colors
 │   └── quiet.vim
