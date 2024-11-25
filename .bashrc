@@ -1,10 +1,9 @@
 function color_my_prompt {
-    local __user_and_host="\[\033[0;36m\]\u"
-    local __cur_location=" ➜ \[\033[0;34m\]\w"
-    local __git_branch_color="\[\033[0;31m\]"
-    #local __git_branch="\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`"
+    local __user_and_host="\[\e[38;5;39m\]\u"
+    local __cur_location=" \[\e[38;5;141m\]\w"
+    local __git_branch_color="\[\e[38;5;105m\]"
     local __git_branch='`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\*\ \(.+\)$/\(\\\\\1\)\ /`'
-    local __prompt_tail="\[\033[33m\]$"
+    local __prompt_tail="\[\033[0m\]$"
     local __last_color="\[\033[00m\]"
     export PS1="$__user_and_host$__cur_location $__git_branch_color$__git_branch$__prompt_tail$__last_color "
 }
@@ -48,7 +47,9 @@ alias gd='git diff'
 #git submodule
 alias gsub='git submodule init && git submodule update'
 alias fixByobu='/usr/lib/byobu/include/tmux-detach-all-but-current-client'
-alias tt=`tmux resize-pane -x $(tmux display -p '#{window_width}' | awk '{print int($1/3)}')`
+alias ss='tmux has-session -t gabe1 2>/dev/null && tmux attach-session -t gabe1 || tmux new-session -s gabe1 \;'
+alias tt='split-window -v -p 30 \; split-window -h -p 50 \; select-pane -t 0'
+alias qq='tmux detach'
 
 #tmux
 alias vv='tmux split-window -h'
@@ -65,11 +66,4 @@ MANPATH=$MANPATH:$HOME/share/man
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 alias vf='X=`fzf -i --height 40%` && v $X'
-export NEO='10.39.120.168'
-
-# fnm
-export PATH=~/.fnm:$PATH
-eval "`fnm env`"
-
-# Generated for envman. Do not edit.
-[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+export NEO=''

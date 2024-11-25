@@ -64,12 +64,16 @@ return require("packer").startup(function(use)
     config = function() require("config.leap") end
   }
 
+  use 'neovim/nvim-lspconfig'
+
+  -- Rust
   use {
-    "neovim/nvim-lspconfig",
-    requires = {{"williamboman/mason.nvim"}, {"williamboman/mason-lspconfig.nvim"}, {"hrsh7th/nvim-cmp"}},
-    config = function() require("config.lspconfig") end
+    'williamboman/mason-lspconfig.nvim',
+    requires = {{"williamboman/mason.nvim"}, {"neovim/nvim-lspconfig"}},
+    config = function() require("config.mason-lspconfig") end
   }
 
+  -- Cmp
   use {
     "hrsh7th/nvim-cmp",
     requires = {

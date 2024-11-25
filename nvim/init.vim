@@ -143,6 +143,7 @@ nnoremap <Leader>v :vsplit<CR>
 nnoremap <Leader>h :split<CR>
 nnoremap <Leader><Space> :nohlsearch<CR>
 " nnoremap <Leader>] :Telescope file_browser<CR>
+nnoremap <Leader>( :NvimTreeToggle<CR>
 
 " Move between splits. Default
 "nnoremap <C-h> <C-w>h

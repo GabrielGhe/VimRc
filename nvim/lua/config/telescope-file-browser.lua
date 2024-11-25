@@ -1,4 +1,8 @@
 require("telescope").setup {
+  defaults = {
+    file_ignore_patterns = {},
+    hidden = true
+  },
   extensions = {
     file_browser = {
       theme = "ivy",
@@ -21,12 +25,12 @@ require("telescope").load_extension "file_browser"
 vim.api.nvim_set_keymap(
   "n",
   "<leader>]",
-  ":Telescope file_browser<CR>",
+  ":Telescope file_browser hidden=true<CR>",
   { noremap = true }
 )
 vim.api.nvim_set_keymap(
   "n",
   "<leader>[",
-  ":Telescope file_browser path=%:p:h select_buffer=true<CR>",
+  ":Telescope file_browser path=%:p:h select_buffer=true hidden=true<CR>",
   { noremap = true }
 )
